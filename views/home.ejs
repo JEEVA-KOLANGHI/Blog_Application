@@ -1,0 +1,12 @@
+<h2>Welcome to My Blog!</h2>
+<% if (blogs.length) { %>
+  <% blogs.forEach(b => { %>
+    <div class="card">
+      <h3><a href="/blogs/<%= b.id %>"><%= b.title %></a></h3>
+      <p><%= b.content.length>100 ? b.content.substring(0,100)+"..." : b.content %></p>
+      <small>By <%= b.username %> on <%= new Date(b.created_at).toLocaleString() %></small>
+    </div>
+  <% }) %>
+<% } else { %>
+  <p>No blogs yet—add one!</p>
+<% } %>

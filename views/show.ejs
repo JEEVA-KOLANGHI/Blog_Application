@@ -1,0 +1,15 @@
+<h2><%= blog.title %></h2> 
+<p><%= blog.content %></p> 
+<small>Posted on <%= new Date(blog.created_at).toLocaleString() %></small> 
+
+<% if (user && user.id === blog.user_id) { %> 
+  <div class="button-group">
+    <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger" type="submit">Delete</button>
+    </form>
+    <a href="/blogs/<%= blog.id %>/edit" class="btn">Edit</a>
+  </div>
+<% } %>
+
+<br><br>
+<a href="/">← Back to Home</a>

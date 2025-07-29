@@ -1,0 +1,8 @@
+<div class="center-page">
+  <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST" class="center-form">
+  <h3>Edit Blog</h3>
+  <label>Title</label>
+  <input type="text" name="title" value="<%= blog.title %>" required />
+  <label>Content</label><textarea name="content" rows="6" required><%= blog.content %></textarea>
+  <button type="submit">Update</button>
+</form></div>

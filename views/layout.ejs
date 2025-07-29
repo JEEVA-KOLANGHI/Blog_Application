@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>My Blog</title><link rel="stylesheet" href="/style.css"/></head>
+<body>
+<header>
+  <div class="container">
+    <h1>📝 My Blog</h1><nav><a href="/">Home</a>
+    <a href="/blogs">All Blogs</a>
+  <% if (user) { %><a href="/blogs/new">New Blog</a>
+  <span> | Hello, <%= user.username %></span>
+  <a href="/logout">Logout</a>
+  <% } else { %>
+    <a href="/signup">Signup</a>
+    <a href="/login">Login</a>
+  <% } %></nav>
+</div>
+</header>
+<div class="container">
+  <% if (success && success.length) { %><div class="alert alert-success"><%= success[0] %></div><% } %>
+  <% if (error && error.length) { %><div class="alert alert-danger"><%= error[0] %></div><% } %>
+  <main><%- body %></main>
+</div>
+</body></html>
